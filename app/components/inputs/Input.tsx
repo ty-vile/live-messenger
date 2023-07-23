@@ -39,7 +39,7 @@ const Input: React.FC<Props> = ({
           className={clsx(
             "form-input block w-full rounded-md  py-3 shadow-sm placeholder:text-gray-400 text-gray-900",
             errors[id] && "focus:ring-red-500",
-            disabled && "opacity-50 cursor-default"
+            disabled && "opacity-50 bg-gray-100 cursor-default"
           )}
         />
       </div>
