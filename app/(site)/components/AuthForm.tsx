@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/app/components/buttons/Button";
 import Input from "@/app/components/inputs/Input";
 import { useCallback, useState } from "react";
 import { useForm, FieldValues, SubmitHandler } from "react-hook-form";
@@ -50,9 +51,25 @@ const AuthForm = () => {
 
   return (
     <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-      <div className="bg-white px-4 py-8 shadow-lg sm:rounded-lg sm:px-10">
+      <div className="bg-white px-4 pt-1 pb-8 shadow-lg sm:rounded-lg sm:px-10">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Input />
+          {variant === "REGISTER" && (
+            <Input label="Name" id="name" register={register} errors={errors} />
+          )}
+          <Input
+            label="Email"
+            id="email"
+            type="email"
+            register={register}
+            errors={errors}
+          />
+          <Input
+            label="Password"
+            id="password"
+            register={register}
+            errors={errors}
+          />
+          <Button fullWidth={true}>Test</Button>
         </form>
       </div>
     </div>
